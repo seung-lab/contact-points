@@ -40,10 +40,24 @@ std::vector<uint32_t> find_contact_points3d_6(
     int64_t ycoord2, int64_t zcoord2
   ) {
     if (point1_label == label1) {
-      uint32_t coords[6] = {xcoord, ycoord, zcoord, xcoord2, ycoord2, zcoord2};
+      uint32_t coords[6] = {
+        static_cast<uint32_t>(xcoord), 
+        static_cast<uint32_t>(ycoord), 
+        static_cast<uint32_t>(zcoord), 
+        static_cast<uint32_t>(xcoord2), 
+        static_cast<uint32_t>(ycoord2), 
+        static_cast<uint32_t>(zcoord2)
+      };
       contact_points.insert(contact_points.end(), coords, std::end(coords));
     } else {
-      uint32_t coords[6] = {xcoord2, ycoord2, zcoord2, xcoord, ycoord, zcoord};
+      uint32_t coords[6] = {
+        static_cast<uint32_t>(xcoord2), 
+        static_cast<uint32_t>(ycoord2), 
+        static_cast<uint32_t>(zcoord2),        
+        static_cast<uint32_t>(xcoord), 
+        static_cast<uint32_t>(ycoord), 
+        static_cast<uint32_t>(zcoord)
+      };
       contact_points.insert(contact_points.end(), coords, std::end(coords));
     }
   };
