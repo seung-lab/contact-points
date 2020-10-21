@@ -1891,6 +1891,7 @@ static const char __pyx_k_size[] = "size";
 static const char __pyx_k_step[] = "step";
 static const char __pyx_k_stop[] = "stop";
 static const char __pyx_k_test[] = "__test__";
+static const char __pyx_k_view[] = "view";
 static const char __pyx_k_ASCII[] = "ASCII";
 static const char __pyx_k_class[] = "__class__";
 static const char __pyx_k_dtype[] = "dtype";
@@ -1906,7 +1907,6 @@ static const char __pyx_k_shape[] = "shape";
 static const char __pyx_k_start[] = "start";
 static const char __pyx_k_uint8[] = "uint8";
 static const char __pyx_k_zeros[] = "zeros";
-static const char __pyx_k_astype[] = "astype";
 static const char __pyx_k_encode[] = "encode";
 static const char __pyx_k_format[] = "format";
 static const char __pyx_k_import[] = "__import__";
@@ -2041,7 +2041,6 @@ static PyObject *__pyx_n_s_arr_memview64;
 static PyObject *__pyx_n_s_arr_memview64u;
 static PyObject *__pyx_n_s_arr_memview8;
 static PyObject *__pyx_n_s_arr_memview8u;
-static PyObject *__pyx_n_s_astype;
 static PyObject *__pyx_n_s_base;
 static PyObject *__pyx_n_s_bool;
 static PyObject *__pyx_n_s_c;
@@ -2139,6 +2138,7 @@ static PyObject *__pyx_kp_s_unable_to_allocate_array_data;
 static PyObject *__pyx_kp_s_unable_to_allocate_shape_and_str;
 static PyObject *__pyx_n_s_unpack;
 static PyObject *__pyx_n_s_update;
+static PyObject *__pyx_n_s_view;
 static PyObject *__pyx_n_s_zeros;
 static PyObject *__pyx_pf_14contact_points__order_data(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_data); /* proto */
 static PyObject *__pyx_pf_14contact_points_2find_contact_points(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_data, PyObject *__pyx_v_label1, PyObject *__pyx_v_label2); /* proto */
@@ -3297,7 +3297,7 @@ static PyObject *__pyx_pf_14contact_points_2find_contact_points(CYTHON_UNUSED Py
  *       sx, sy, sz, connectivity
  *     )
  *   elif dtype in (np.uint8, np.bool):             # <<<<<<<<<<<<<<
- *     arr_memview8u = data.astype(np.uint8)
+ *     arr_memview8u = data.view(np.uint8)
  *     contact_points = find_contact_points3d[uint8_t](
  */
   __Pyx_INCREF(__pyx_v_dtype);
@@ -3334,11 +3334,11 @@ static PyObject *__pyx_pf_14contact_points_2find_contact_points(CYTHON_UNUSED Py
     /* "contact_points.pyx":117
  *     )
  *   elif dtype in (np.uint8, np.bool):
- *     arr_memview8u = data.astype(np.uint8)             # <<<<<<<<<<<<<<
+ *     arr_memview8u = data.view(np.uint8)             # <<<<<<<<<<<<<<
  *     contact_points = find_contact_points3d[uint8_t](
  *       &arr_memview8u[0,0,0], label1, label2,
  */
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_data, __pyx_n_s_astype); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_data, __pyx_n_s_view); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
@@ -3368,7 +3368,7 @@ static PyObject *__pyx_pf_14contact_points_2find_contact_points(CYTHON_UNUSED Py
     __pyx_t_28.data = NULL;
 
     /* "contact_points.pyx":119
- *     arr_memview8u = data.astype(np.uint8)
+ *     arr_memview8u = data.view(np.uint8)
  *     contact_points = find_contact_points3d[uint8_t](
  *       &arr_memview8u[0,0,0], label1, label2,             # <<<<<<<<<<<<<<
  *       sx, sy, sz, connectivity
@@ -3410,7 +3410,7 @@ static PyObject *__pyx_pf_14contact_points_2find_contact_points(CYTHON_UNUSED Py
 
     /* "contact_points.pyx":118
  *   elif dtype in (np.uint8, np.bool):
- *     arr_memview8u = data.astype(np.uint8)
+ *     arr_memview8u = data.view(np.uint8)
  *     contact_points = find_contact_points3d[uint8_t](             # <<<<<<<<<<<<<<
  *       &arr_memview8u[0,0,0], label1, label2,
  *       sx, sy, sz, connectivity
@@ -3421,7 +3421,7 @@ static PyObject *__pyx_pf_14contact_points_2find_contact_points(CYTHON_UNUSED Py
  *       sx, sy, sz, connectivity
  *     )
  *   elif dtype in (np.uint8, np.bool):             # <<<<<<<<<<<<<<
- *     arr_memview8u = data.astype(np.uint8)
+ *     arr_memview8u = data.view(np.uint8)
  *     contact_points = find_contact_points3d[uint8_t](
  */
     goto __pyx_L10;
@@ -17812,7 +17812,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_arr_memview64u, __pyx_k_arr_memview64u, sizeof(__pyx_k_arr_memview64u), 0, 0, 1, 1},
   {&__pyx_n_s_arr_memview8, __pyx_k_arr_memview8, sizeof(__pyx_k_arr_memview8), 0, 0, 1, 1},
   {&__pyx_n_s_arr_memview8u, __pyx_k_arr_memview8u, sizeof(__pyx_k_arr_memview8u), 0, 0, 1, 1},
-  {&__pyx_n_s_astype, __pyx_k_astype, sizeof(__pyx_k_astype), 0, 0, 1, 1},
   {&__pyx_n_s_base, __pyx_k_base, sizeof(__pyx_k_base), 0, 0, 1, 1},
   {&__pyx_n_s_bool, __pyx_k_bool, sizeof(__pyx_k_bool), 0, 0, 1, 1},
   {&__pyx_n_s_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 0, 1, 1},
@@ -17910,6 +17909,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_unable_to_allocate_shape_and_str, __pyx_k_unable_to_allocate_shape_and_str, sizeof(__pyx_k_unable_to_allocate_shape_and_str), 0, 0, 1, 0},
   {&__pyx_n_s_unpack, __pyx_k_unpack, sizeof(__pyx_k_unpack), 0, 0, 1, 1},
   {&__pyx_n_s_update, __pyx_k_update, sizeof(__pyx_k_update), 0, 0, 1, 1},
+  {&__pyx_n_s_view, __pyx_k_view, sizeof(__pyx_k_view), 0, 0, 1, 1},
   {&__pyx_n_s_zeros, __pyx_k_zeros, sizeof(__pyx_k_zeros), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };

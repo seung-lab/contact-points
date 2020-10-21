@@ -114,7 +114,7 @@ def find_contact_points(data, label1, label2):
       sx, sy, sz, connectivity
     )
   elif dtype in (np.uint8, np.bool):
-    arr_memview8u = data.astype(np.uint8)
+    arr_memview8u = data.view(np.uint8)
     contact_points = find_contact_points3d[uint8_t](
       &arr_memview8u[0,0,0], label1, label2,
       sx, sy, sz, connectivity
