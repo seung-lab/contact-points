@@ -13,7 +13,7 @@ def read(fname):
 
 setuptools.setup(
   name='contact_points',
-  version='0.0.6',
+  version='0.0.7',
   author='Manuel Castro',
   author_email='macastro@princeton.edu',
   setup_requires=['numpy'],
